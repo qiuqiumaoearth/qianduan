@@ -215,16 +215,18 @@
 	width: 100%;
 	height: 342px;
 	background-color: #333;
+	box-sizing: border-box;
 	
 }
 
 .footer .wrapper{
 	
-	width: 1393px;
+	width: 100%;
 	height: 342px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* justify-content: center; */
 	/* background-color: #c290d5; */
 	
 }

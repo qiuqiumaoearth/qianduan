@@ -9,7 +9,7 @@
 
 .banner .wrapper{
 	height: 500px;
-	background-color: pink;
+	/* background-color: pink; */
 	position: relative;
 }
 
@@ -207,10 +207,11 @@
 }
 
 .goods .bd ul li{
+	position: relative;
 	width: 305px;
 	height: 405px;
-	background-color: pink;
-	outline: 2px solid black;
+	/* background-color: pink;
+	outline: 2px solid black; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -218,11 +219,16 @@
 	/* align-content: space-between; */
 }
 
-
+.goods .bd ul li h3{
+	margin-top:20px;
+	font-size: 20px;
+	font-weight: 400;
+}
 
 .goods .bd ul li div{
-	margin-bottom: 10px;
-	color: red;
+	margin-bottom:20px;
+	color: #9a2e1f;
+	font-size: 23px;
 }
 
 /* .goods .bd ul li div::before{
@@ -232,8 +238,8 @@
 
 
 .goods .bd ul li div::first-letter{
-	font-size: 0.8em;
-	color: #000;
+	font-size: 17px;
+	color: #9a2e1f;
 }
 
 
@@ -242,4 +248,178 @@
 	height: 305px;
 	background-color: #aaaa7f;
 }
+
+.goods .bd ul li::before{
+	content: "新品";
+	display: inline-block;
+	width: 28px;
+	height: 51px;
+	/* background-color: black; */
+	z-index: 999;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	border: 2px solid #29BA9B;
+	text-align: center;
+	color: #29BA9B;
+	border-radius: 7px;
+	font-size: 18px;
+	line-height: 25px;
+	
+}
+
+/* 生鲜 */
+.shengxian{
+	width: 1240px;
+	height: 100%;
+	/* display: flex; */
+	
+}
+
+.shengxian .hd{
+	width: 1240px;
+	height: 96px;
+	/* background-color: #aaffff; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	/* outline: 1px solid black; */
+	justify-content: space-between;
+	
+}
+
+.shengxian .hd .tou {
+	width: 100%;
+	height: 96px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	/* outline: 1px solid black; */
+	/* align-items: center; */
+	/* background-color: yellow; */
+	
+
+}
+
+.shengxian .hd .tou li:first-child{
+	width: 120px;
+	height: 96px;
+	font-size: 30px;
+	line-height: 96px;
+	/* width: 100%; */
+	/* background-color: #f5f5f5; */
+}
+
+.shengxian .hd .tou li:last-child{
+	width: 370px;
+	height: 96px;
+	line-height: 96px;
+	/* margin-right: auto; */
+	color: #999;
+	/* color: red; */
+	/* background-color: #aaffff; */
+	
+}
+
+.shengxian .hd .tou li:last-child a{
+	
+	color: #999;
+	padding: 0 7px;
+}
+
+.shengxian .hd .tou li:last-child a:hover{
+	background-color: #21BB98;
+	/* opacity: 0.6; */
+	
+}
+
+
+
+.shengxian .hd .wei{
+	/* width: 100%; */
+	/* margin-left: auto; */
+	/* margin-right: 55px; */
+	/* width: 100%; */
+	height: 96px;
+	/* display: inline-block; */
+	/* background-color: #29BA9B; */
+}
+
+.shengxian .hd .wei li{
+	width: 96px;
+}
+
+.shengxian .hd .wei a{
+	width: 100%;
+	height: 96px;
+	color: #999;
+	line-height: 96px;
+	/* margin-left: 2px; */
+	/* display: inline-block; */
+	/* margin-right: auto; */
+}
+
+.shengxian .hd .wei a::after{
+	content: "";
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	/* background-color: #000000; */
+	background-image: url(../images/sprites.png);
+	background-position: 0px -104px;
+	/* vertical-align: top; */
+	/* margin:0 2px; */
+	margin-left: 13px;
+	/* margin-top: 36px; */
+	/* line-height: 96px; */
+	/* margin-right: 2shengxian */
+	
+}
+
+
+.shengxian .bd{
+	display: block;
+	width: 1240px;
+	height: 610px;
+	/* background-color: black; */
+}
+
+
+.shengxian .bd ul{
+	width: 1240px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: space-between;
+	/* background-color: skyblue; */
+	/* padding-right: 10px; */
+	/* background-color: pink; */
+	/* padding-left: 5px; */
+}
+
+.shengxian .bd ul li{
+	outline: 1px solid black;
+	width: 242px;
+	height: 304px;
+	background-color: yellowgreen;
+}
+
+
+
+.shengxian .bd ul li:first-child{
+	background-color: bisque;
+	width: 240px;
+	height: 610px;
+}
+
+.shengxian .bd ul li img{
+	width: 100%;
+}
+
+
+/* .shengxian .bd ul li:first-child img{
+	width: 100%;
+	height: 610px;
+} */
 
