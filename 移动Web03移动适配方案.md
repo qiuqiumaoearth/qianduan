@@ -1,4 +1,5 @@
 # 适配方案
+<<<<<<< HEAD
 - 屏幕分辨率:纵横向上的像素点数,单位是px
 	- pc分辨率:1920*1080/1366*768
 	- 缩放150%:1920/150%;1080/150%
@@ -6,3 +7,7 @@
 	- 缩放调节的分辨率 → 逻辑分辨率(软件/驱动设置)
 - rem
 - vw
+=======
+- rem
+- less
+>>>>>>> 19ea644 (Please enter the commit message for your changes. Lines starting)
