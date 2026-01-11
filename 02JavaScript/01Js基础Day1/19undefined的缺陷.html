@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function checkUndefined() {
+			  // 局部作用域覆盖 undefined
+			  var undefined = 123;
+			  var a;
+			  console.log(a == undefined); // false
+			  console.log(a == void 0);   // true
+			}
+			checkUndefined();
+			
+		</script>
+	</body>
+</html>

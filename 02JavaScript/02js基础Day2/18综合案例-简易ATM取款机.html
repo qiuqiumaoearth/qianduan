@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script>
+	let money = 0
+	while (true){
+		
+		let num = prompt(`请选择操作:1.存钱 2.取钱 3. 查看余额  4.退出:`)
+		if (num === '4'){
+			break
+		}
+		switch(num){
+			case '1':
+			a = +prompt('输入存入的金额:')
+			money += a
+			break
+			case '2':
+			b = +prompt('输入取出的金额:')
+			if (money>=b) {
+				money -= b
+			} else{
+				alert('余额不足')
+			}
+			break
+			case '3':
+			alert(`显示剩余金额${money}`)
+			break	
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+		
+		
+	</script>
+	</body>
+</html>
