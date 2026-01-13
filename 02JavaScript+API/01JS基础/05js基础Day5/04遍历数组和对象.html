@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script>
+		// for in 不推荐遍历数组
+		let arr =['pink','green','blue']
+		for(let k in arr){
+			console.log(k); // 数组的下标 索引号 但是是字符串'0'
+			console.log(arr[k]);
+		}
+		
+		
+		// // for in 用来遍历对象
+		let obj = {
+			name:'nihao',
+			age :18,
+			gender :'男',
+			
+		}
+		
+		for (let key in obj) {
+			console.log(key); // 属性名 'name' 'age'
+			console.log(obj[key]); //输出属性值 obj[k]
+		}
+
+		
+		//输出对象属性值
+		for (let s of Object.values(obj)) {
+			// console.log('2');
+			console.log(s);
+		}
+		
+		//输出对象属性名
+		for (let s of Object.keys(obj)) {
+			// console.log('2');
+			console.log(s);
+		}
+		
+		// 遍历键值对
+		for (let s of Object.entries(obj)) {
+			console.log(s);
+		}
+		
+	</script>
+	</body>
+</html>

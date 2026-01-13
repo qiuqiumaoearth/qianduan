@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script>
+		let uname = ['赵云','黄忠','关羽','张飞','马超','刘备','曹操']
+		
+		// 1.随机抽取
+		// console.log(uname[Date.now()%uname.length]);
+		// console.log(uname[Math.floor(Math.random()*uname.length)]);
+		
+		// 2.不允许重复抽取	
+		while (uname.length){
+			const round = Math.floor(Math.random()*uname.length);
+			console.log(uname[round]);
+			uname.splice(round,1)
+
+		}
+		
+		
+	</script>
+	</body>
+</html>
