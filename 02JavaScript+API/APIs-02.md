@@ -31,3 +31,50 @@
     </script>
   </body>
   ```
+
+  - 事件监听版本
+    - DOM L0  
+    事件源.on事件=function(){}
+
+  ```html
+    <body>
+      <button onclick="alert('11')">按钮</button> //行内js
+      <script>
+          const btn = document.querySelector('button')
+          btn.onclick = function () {
+              alert('22')  
+          }  //会覆盖
+      // 这两种本质是一样的
+        </script>
+    </body>
+    ```
+
+  - DOM L2
+    事件源.addEventListener(事件,事件处理函数)
+    -区别:on方式会被覆盖,addEventListener方式可绑定多次,拥有事件更多特性,推荐使用
+- 事件类型
+  - 鼠标点击输入框，获得焦点，开始输入，输入事件，输入完毕鼠标点外面，失去焦点
+  - 鼠标事件:鼠标触发
+    - click:鼠标点击
+    - mouseenter:鼠标经过
+    - mouseleave:鼠标离开
+
+    ```html
+    <body>
+      <div class="box"></div>
+        <script>
+        const div = document.querySelector('div')
+        div.addEventListener('mouseenter', function () {
+            console.log('nihao')
+        })
+      </script>
+    </body>
+    ```
+
+  - 表单事件:表单获得光标
+    - focus:获得焦点
+    - blur:失去焦点
+    - input:用户输入事件
+  - 键盘事件:键盘触发
+    - keydown:键盘按下触发
+    - keyup:键盘抬起触发
