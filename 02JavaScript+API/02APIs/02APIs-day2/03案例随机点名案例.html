@@ -57,11 +57,60 @@
     <script>
         // 数据数组
         const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        let timer = 0
+        let index = 0
 
-        //点击开始按钮随机抽取数组的一个数据,放进页面中
-        let random = Math.floor(Math.random() * arr.length)
+        //随机数
+        function random() {
+            return Math.floor(Math.random() * arr.length)
+
+        }
+
+
+
+        //开始模块
+        const btnStart = document.querySelector('.start')
         const qs = document.querySelector('.qs')
-        qs.innerHTML = arr[random]
+
+        btnStart.addEventListener('click', function () {
+            if (arr.length === 0) {
+                alert('没有人了')
+                return;
+            }
+
+            clearInterval(timer);
+
+            btnStart.disabled = true
+            btnEnd.disabled = false
+
+            timer = setInterval(function () {
+                const randomIndex = random()
+                qs.innerHTML = arr[randomIndex]
+                index = randomIndex
+
+            }, 500)
+        })
+
+
+        //结束模块
+        const btnEnd = document.querySelector('.end')
+
+        btnEnd.addEventListener('click', function () {
+            clearInterval(timer)
+            btnStart.disabled = false
+            btnEnd.disabled = true
+            const deleted = arr.splice(index, 1)
+
+
+            console.log(`删除了: ${deleted}, 剩余名单:`, arr)
+
+            if (arr.length === 0) {
+                qs.innerHTML = "抽奖结束"
+            }
+        })
+
+
+
 
     </script>
 </body>
