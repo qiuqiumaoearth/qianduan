@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      /* background-color: pink; */
+    }
+
+    .active {
+      color: red;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">文字</div>
+  <script>
+    // 1.获取元素
+    const box = document.querySelector('.box')
+    // 2.追加一个类名 add()类名不加点,并且是字符串
+    box.classList.add('active')
+    // 3.移除一个类名 remove()类名不加点,并且是字符串
+    box.classList.remove('box')
+    // 4.切换类名 toggle() 有还是没有,有就移除,没有就添加
+    box.classList.toggle('move')
+  </script>
+</body>
+
+</html>

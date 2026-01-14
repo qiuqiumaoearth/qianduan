@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>轮播图点击切换</title>
+  <title>轮播图定时器</title>
   <style>
     * {
       box-sizing: border-box;
@@ -94,12 +94,12 @@
 <body>
   <div class="slider">
     <div class="slider-wrapper">
-      <img src="./images/slider01.jpg" alt="" />
+      <img src="素材/images/slider01.jpg" alt="" />
     </div>
     <div class="slider-footer">
-
+      <p>对人类来说会不会太超前了？</p>
       <ul class="slider-indicator">
-        <li class="active"></li>
+        <li class='active'></li>
         <li></li>
         <li></li>
         <li></li>
@@ -117,16 +117,46 @@
   <script>
     // 1. 初始数据
     const sliderData = [
-      { url: './images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
-      { url: './images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
-      { url: './images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
-      { url: './images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
-      { url: './images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
-      { url: './images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
-      { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
-      { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+      { url: '素材/images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+      { url: '素材/images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+      { url: '素材/images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+      { url: '素材/images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+      { url: '素材/images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+      { url: '素材/images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+      { url: '素材/images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+      { url: '素材/images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
 
+    let i = 0;
+
+    //每隔一秒切换一个图片
+    function changeImg() {
+      const index = i % sliderData.length
+      const activData = sliderData[index]
+
+      //4.修改img的src属性
+      const sliderImg = document.querySelector('.slider-wrapper img');
+      sliderImg.src = activData.url;
+
+      // 5.修改p里面的文字
+      const sliderP = document.querySelector('.slider-footer p');
+      sliderP.textContent = activData.title;
+
+      // 6.修改footer的背景颜色
+      const sliderFooter = document.querySelector('.slider-footer');
+      sliderFooter.style.backgroundColor = activData.color;
+
+      // 先删除以前的active,让现在的有
+      document.querySelector('.slider-indicator .active').classList.remove('active')
+
+      // 7.再添加现在的
+      document.querySelector(`.slider-indicator li:nth-child(${index + 1})`).classList.add('active');
+
+      i++;
+
+    }
+
+    let timer = setInterval(changeImg, 1000)
 
   </script>
 </body>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+
+    .box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      line-height: 200px;
+      text-align: center;
+      display: block;
+    }
+
+    .box .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      background-color: green;
+      color: red;
+      cursor: pointer;
+      display: block;
+    }
+
+
+    input {
+      display: none;
+    }
+
+    #close:checked+.box {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" id='close'>
+  <div class="box">
+    <label for="close">×</label>
+    我是广告
+  </div>
+
+  <!-- <script>
+    const clo = document.querySelector('.close')
+    const box = document.querySelector('.box')
+
+    clo.addEventListener('click', function () {
+      box.style.display = 'none'
+    })
+
+
+
+  </script> -->
+</body>
+
+</html>
