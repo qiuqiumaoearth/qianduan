@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+    <li>第6个孩子</li>
+    <p>不要变色</p>
+  </ul>
+  <script>
+    //点击每个小li,当前li文字变成红色
+    //按照委托的方式
+    //1.获取父级
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function (e) {
+      // alert(11) //孩子元素因为冒泡,所有点击随便一个孩子都会弹出
+      // e.target//我们点击的对象
+      // e.target.style.color = 'red' //此时ul里面的每一个孩子都变色
+
+      //只要点击li才有效果
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'red'
+      }
+    })
+
+  </script>
+</body>
+
+</html>

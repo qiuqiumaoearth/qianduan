@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .boxa {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .boxb {
+      width: 50px;
+      height: 50px;
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="boxa">
+    <div class="boxb"></div>
+  </div>
+  <script>
+    const a = document.querySelector('.boxa')
+    const b = document.querySelector('.boxb')
+
+    a.addEventListener('click', function () {
+      console.log('大盒子');
+    })
+    b.addEventListener('click', function (e) {
+      console.log('小盒子');
+      //阻止流动传播
+      e.stopPropagation() //此时点击小盒子,只会打印小盒子
+    })
+  </script>
+</body>
+
+</html>
