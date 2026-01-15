@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>按钮</button>
+  <script>
+    //每个函数里面都有this环境对象,普通函数里面this指向的时window
+    function fn() {
+      console.log(this)
+    }
+    window.fn()
+
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', function () {
+      // console.log(this)  //打印的是当前选中的button标签 :<button>按钮</button>
+      // btn.style.color = 'red'
+      this.style.color = 'red' //现在可以这样写
+    })
+  </script>
+</body>
+
+</html>
