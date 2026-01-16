@@ -1216,30 +1216,53 @@
     </ul>
   </div>
   <script>
-    //获取元素
-    const elevator = document.querySelector('.xtx-elevator')
-    const entry = document.querySelector('.xtx_entry')
+    (function () {
+      // 第一个大模块,页面滑动可以隐藏和显示
+      //获取元素
+      const elevator = document.querySelector('.xtx-elevator')
+      const entry = document.querySelector('.xtx_entry')
 
-    //1.当页面滚动大于300像素，就显示电梯导航
-    //2.给页面添加滚动事件
-    window.addEventListener('scroll', function () {
+      //1.当页面滚动大于300像素，就显示电梯导航
+      //2.给页面添加滚动事件
+      window.addEventListener('scroll', function () {
 
-      //被卷去头部大于300
-      const n = document.documentElement.scrollTop
-      // if (n >= 300) {
-      //   elevator.style.opacity = 1
-      // } else {
-      //   elevator.style.opacity = 0
-      // }
-      elevator.style.opacity = n >= entry.offsetTop ? 1 : 0
+        //被卷去头部大于300
+        const n = document.documentElement.scrollTop
+        // if (n >= 300) {
+        //   elevator.style.opacity = 1
+        // } else {
+        //   elevator.style.opacity = 0
+        // }
+        elevator.style.opacity = n >= entry.offsetTop ? 1 : 0
 
-    })
+      })
 
-    //点击返回页面顶部
-    const backTop = document.querySelector('#backTop')
-    backTop.addEventListener('click', function () {
-      document.documentElement.scrollTop = 0
-    })
+      //点击返回页面顶部
+      const backTop = document.querySelector('#backTop')
+      backTop.addEventListener('click', function () {
+        document.documentElement.scrollTop = 0
+      })
+    })();
+
+    //第二,第三都放到另外一个执行函数李米娜
+    (function () {
+      //2.点击页面可以滑动;用事件委托
+      const list = document.querySelector('.xtx-elevator-list')
+      list.addEventListener('click', function (e) {
+        //排他思想
+        //先获取
+        const old = document.querySelector('.xtx-elevator-list .active')
+        if (old) old.classList.remove('active')
+        //当前元素天见active
+        e.target.classList.add('active')
+      }
+      )
+
+
+
+
+    })();
+
 
   </script>
 

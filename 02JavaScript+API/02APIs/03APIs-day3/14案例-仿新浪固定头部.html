@@ -34,7 +34,7 @@
         .backtop a {
             height: 50px;
             width: 50px;
-            background: url(./images/bg2.png) 0 -600px no-repeat;
+            background: url(素材/images/bg2.png) 0 -600px no-repeat;
             opacity: 0.35;
             overflow: hidden;
             display: block;
@@ -44,7 +44,7 @@
 
         .header {
             position: fixed;
-            top: 0;
+            top: -80px;
             left: 0;
             width: 100%;
             height: 80px;
@@ -71,10 +71,20 @@
         <div class="sk">秒杀模块</div>
     </div>
     <div class="backtop">
-        <img src="./images/close2.png" alt="">
+        <img src="素材/images/close2.png" alt="">
         <a href="javascript:;"></a>
     </div>
     <script>
+        const header = document.querySelector('.header')
+        const content = document.querySelector('.content')
+        const sk = document.querySelector('.sk')
+
+        // 1.页面滚动事件
+        window.addEventListener('scroll', function () {
+            // 2. 当页面滚动到 渺少模块的时候，就改变头部的top值
+            const n = document.documentElement.scrollTop
+            header.style.top = n >= sk.offsetTop ? 0 : '-80px'
+        })
 
     </script>
 </body>

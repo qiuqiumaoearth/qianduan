@@ -207,6 +207,13 @@
 
 # 其他事件
 
+|属性|作用|说明|
+|:---:|:---|:---|
+|`scrollLeft`和`scrollTop`|被卷去的头部和左侧值|配合页面滚动`scroll`来用,可读写|
+|`clientWidth`和`clientHeight`|获得元素宽度和高度|不包含`border`,`margin`,滚动条用于js获取元素大小,只读属性|
+|`offsetWidth`和`offsetHeight`|获得元素宽度和高度|包含`border`,`margin`,滚动条用于js获取元素大小,只读属性|
+|`offsetLeft`和`offsetTop`|获取元素距离自己定位的父级元素的左,上距离|获取元素位置的时候使用,只读属性|
+
 - 页面加载事件
 
   - 加载外部资源(如:图片,外联css和js等),加载完毕时触发的事件
@@ -284,11 +291,14 @@
       //给i赋值,获取当前页面向下滚动的高度
       const i = document.documentElement.scrollTop
       //当向下滚动100px的时候,显示div
-      if (i >= 100) {
-        div.style.display = 'block'
-      } else {
-        div.style.display = 'none'
-      }
+      // if (i >= 100) {
+      //   div.style.display = 'block'
+      // } else {
+      //   div.style.display = 'none'
+      // }
+
+      //可以变成简单三元赋值
+      div.style.display = i >= 100 ? 'block' : 'none'
 
     })
 
@@ -383,6 +393,29 @@
 
       // console.log(box.offsetLeft); 
       console.log(p.offsetLeft);  //父级有position:relative,那么就是相对于父亲的
+
+    </script>
+  </body>
+  ```
+
+  - `element.getBoundingClientRect()`返回元素的大小及其相对于视口的位置
+
+  ```html
+  <body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+    console.log(box.getBoundingClientRect());
+    //     {
+    //     "x": 107.98828125,
+    //     "y": 100,
+    //     "width": 200,
+    //     "height": 200,
+    //     "top": 100,
+    //     "right": 307.98828125,
+    //     "bottom": 300,
+    //     "left": 107.98828125
+    // }
 
     </script>
   </body>

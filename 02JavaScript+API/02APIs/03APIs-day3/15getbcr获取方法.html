@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    .box {
+      margin: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+    console.log(box.getBoundingClientRect());
+    //     {
+    //     "x": 107.98828125,
+    //     "y": 100,
+    //     "width": 200,
+    //     "height": 200,
+    //     "top": 100,
+    //     "right": 307.98828125,
+    //     "bottom": 300,
+    //     "left": 107.98828125
+    // }
+
+  </script>
+</body>
+
+</html>
